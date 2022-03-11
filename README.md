@@ -41,7 +41,7 @@ set_gateway.sh
 
 ### Step 8) Collect the ubuntu install iso from online
 > NOTE: I have left the extensions off and put them in the commands
-Create empty drive - MT_drive.sh
-Sets the installer running - installer.sh
-Run with - run.sh
-Snapshot with - snapshot.sh
+> Create empty drive - MT_drive.sh
+> Sets the installer running - installer.sh
+> Run with - run.sh
+> Snapshot with - snapshot.sh
