@@ -1,5 +1,5 @@
 ## qemu
-> Quick and dirty qemu tear-up/tear down
+> Ubuntu tear-up/tear down via qemu
 
 ### Step 1) install.sh - install all these packages. You can cut and paste the whole command.
 
