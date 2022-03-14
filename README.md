@@ -4,7 +4,7 @@
 ### Step 1) install.sh - install all these packages. You can cut and paste the whole command.
 
 ### Step 2) Clone the following
-_git clone https://git://git.qemu-project.org/qemu.git_ \
+_git clone https://git.qemu-project.org/qemu.git_ \
 _git clone https://github.com/axboe/liburing.git_ \
 _git clone https://github.com/MattGorko/libu2f-emu.git_ \
 _git clone https://github.com/libbpf/libbpf.git_ \
