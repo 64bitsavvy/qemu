@@ -13,24 +13,24 @@ _git clone https://github.com/capstone-engine/capstone.git_
 ### Step 3) Configure the build
 _./configure --enable-docs --enable-kvm --enable-libpmem --enable-debug --extra-cflags="-g3" --extra-ldflags="-g3" --disable-strip --disable-pie_
 
-### Step 3) make -j? speeds it up. I set mine to number cpu cores + 1
+### Step 4) make -j? speeds it up. I set mine to number cpu cores + 1
 _cat /proc/cpuinfo | grep processor | wc -l_ \
 _make -j9_
 
-### Step 4) Install it into your path - Should end up in /usr/local/bin/
+### Step 5) Install it into your path - Should end up in /usr/local/bin/
 _sudo make install_
 
-### Step 5) Configure to use tap interface
+### Step 6) Configure to use tap interface
 > Now setup networking starting with a local dhcp server \
 _mv /etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf-bak_ \
 > Replace /etc/dhcp/dhcpd.conf
 
-### Step 6) These commands setup a network adaptor for the VM
+### Step 7) These commands setup a network adaptor for the VM
 > Choose an interface that dosnt appear in your ifconfig - eth0 in my case \
 > MAC is arbitrary \
 _set_nic.sh_
 
-### Step 6) These commands set your host up as a gateway for internet access
+### Step 8) These commands set your host up as a gateway for internet access
 > This shows if your forwarding traffic 1 yes, 0 no \
 _cat /proc/sys/net/ipv4/ip_forward_ \
 > Setup or disable forwarding on host system (If you want to keep vm off line ech o0) \
@@ -39,13 +39,15 @@ _echo 1 > /proc/sys/net/ipv4/ip_forward_ \
 _echo 0 > /proc/sys/net/ipv4/ip_forward_ \
 _set_gateway.sh_
 
-### Step 8) Collect the ubuntu install iso from online
+### Step 9) Collect the ubuntu install iso from online
 > I have left the extensions off and put them in the commands \
 > Create empty drive \
-_MT_drive.sh_ \
-> Sets the installer running \
+_setup-MT-drive.sh_ \
+> Sets the OS installer running \
 _installer.sh_ \
 > Run with \
-_run.sh_ \
-> Snapshot with \
+_run-os.sh_ \
+> Take a snapshot with \
 _snapshot.sh_ \
+> Run the snapshot with \
+_run-snapshot.sh_ 
